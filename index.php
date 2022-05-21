@@ -2,9 +2,9 @@
 require('dbconnect.php');
 
 $stmt = $pdo->query("SELECT * FROM posts");
-$rows = $stmt->fetchAll();
+$posts = $stmt->fetchAll();
 echo "<pre>";
-print_r($rows);
+print_r($posts);
 echo "</pre>"; 
 ?>
 
@@ -41,7 +41,7 @@ echo "</pre>";
         </tr>
     </thead>
 
-<!--  <tbody>
+<tbody>
     <?php foreach ($posts as $post) { ?>
                 <tr>
                     <td><?=htmlentities($post['title']) ?></td>
@@ -57,7 +57,7 @@ echo "</pre>";
                     </td>
                 </tr>
             <?php }?>
-    </tbody>   -->
+    </tbody>   
 
 </table>
 
