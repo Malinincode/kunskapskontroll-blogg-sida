@@ -1,32 +1,9 @@
 <?php
 require('dbconnect.php');
 
-/* echo "<pre>";
-print_r($_POST);
-echo "</pre>";  */
-
-/* DELETE a post */
-if (isset($_POST['postId'])) {
-    
-    $sql = "
-        DELETE FROM posts 
-        WHERE id = :id;
-    ";
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(":id", $_POST['postId']);
-    $stmt->execute(); // Returns true/false, depening if it was successful or not
-} 
-
-
-$stmt = $pdo->query("SELECT * FROM posts");
-$posts = $stmt->fetchAll();
-
-/* echo "<pre>";
-print_r($posts);
-echo "</pre>";  */
 
 /* ADD a post  */
-/* if (isset($_POST['createPost'])) {
+if (isset($_POST['createPost'])) {
     $sql = "
        INSERT INTO posts (title, author, content) 
        VALUES (:title, :author, :content);
@@ -37,8 +14,9 @@ echo "</pre>";  */
    $stmt->bindParam(":author", $_POST['author']);
    $stmt->bindParam(":content", $_POST['content']);
    $stmt->execute();
+   header("Location:./admin.php");
 }
- */
+
 
 ?>
 
@@ -55,40 +33,8 @@ echo "</pre>";  */
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h3 id="admin">Admin</h3>
-<a href="./create-new-post.php"><button class="btn btn-outline-success mt-sm-3">Create New Post</button></a>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>content</th>
-            <th>author</th>
-            <th>published_date</th>
-            
-        </tr>
-    </thead>
 
-<tbody>
-    <?php foreach ($posts as $post) { ?>
-                <tr>
-                    <td><?=htmlentities($post['title']) ?></td>
-                    <td><?=htmlentities($post['content']) ?></td>
-                    <td><?=htmlentities($post['author']) ?></td>
-                    <td><?=htmlentities($post['published_date']) ?></td>
-
-                    <td>
-                        <form action="" method="POST">
-                            <input type="hidden" name="postId" value="<?=$post['id'] ?>">
-                            <button>Delete</button>
-                        </form>
-                    </td>
-                </tr>
-            <?php }?>
-    </tbody>   
-
-</table>
-
-<!-- <form action="" method="POST">
+<form action="" method="POST">
      
 <h3>Create new post</h3>
 
@@ -110,7 +56,7 @@ echo "</pre>";  */
     <div>
         <button type="submit" name="createPost" class="btn btn-outline-success" value="createContent">Create new post</button>
     </div>
-</form> -->
+</form>
 
 
 

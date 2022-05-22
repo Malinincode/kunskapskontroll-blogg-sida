@@ -1,19 +1,12 @@
-#posts-tbl {
+body {
+    width: 80%;
+   margin: auto;
+    }
 
-    border-collapse: collapse;
-    margin-bottom: 40px;
+#admin {
+    color: rgb(224, 73, 167);
 }
 
-#posts-tbl tr,
-#posts-tbl td,
-#posts-tbl th {
-    border: 1px solid black;
-    padding: 10px;
 
-} 
 
-#forms {
 
-padding: 40px;;
-
-}

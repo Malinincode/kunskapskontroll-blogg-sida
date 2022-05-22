@@ -5,7 +5,6 @@ require('dbconnect.php');
 $stmt = $pdo->query("SELECT * FROM posts");
 $posts = $stmt->fetchAll();
 
-
 ?>
 
 
@@ -35,19 +34,14 @@ $posts = $stmt->fetchAll();
 
 <tbody>
     <?php foreach ($posts as $post) { ?>
-       
                 <tr>
-                <?=(substr($post['content'],0,100))?>
                     <td><?=htmlentities($post['title']) ?></td>
                     <td><?=htmlentities($post['content']) ?></td>
                     <td><?=htmlentities($post['author']) ?></td>
                     <td><?=htmlentities($post['published_date']) ?></td>
-                   
-                </tr>
-               
-                
-            <?php }?>
 
+                </tr>
+            <?php }?>
     </tbody>   
 
 </table>
