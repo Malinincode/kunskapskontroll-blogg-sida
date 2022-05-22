@@ -34,14 +34,16 @@ $posts = $stmt->fetchAll();
     </thead>
 
 <tbody>
+
     <?php foreach ($posts as $post) { ?>
-       
+        
                 <tr>
-                <?=(substr($post['content'],0,100))?>
+               
                     <td><?=htmlentities($post['title']) ?></td>
-                    <td><?=htmlentities($post['content']) ?></td>
+                    <td><?=(substr($post['content'],0,100))?><a href="single-post.php?posts=<?php echo {$_GET['incomingID']}?>">Read More</a></td>
                     <td><?=htmlentities($post['author']) ?></td>
                     <td><?=htmlentities($post['published_date']) ?></td>
+                  
                    
                 </tr>
                

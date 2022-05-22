@@ -1,9 +1,12 @@
 <?php
 require('dbconnect.php');
 
+$incomingID = $_GET["id"];
+$stmt = $pdo->query("SELECT * FROM`posts` WHERE id =  $incomingID");
 
-$stmt = $pdo->query("SELECT * FROM posts");
-$posts = $stmt->fetchAll();
+
+/* $stmt = $pdo->query("SELECT * FROM posts"); */
+$posts = $stmt->fetch();
 
 ?>
 
@@ -19,7 +22,7 @@ $posts = $stmt->fetchAll();
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h3 id="admin">Alla blogginlägg</h3>
+<h3 id="admin">Enskilt inlägg</h3>
 
 <table class="table">
     <thead>

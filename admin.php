@@ -56,7 +56,7 @@ echo "</pre>";  */
 </head>
 <body>
 <h3 id="admin">Admin</h3>
-<a href="./create-new-post.php"><button class="btn btn-outline-success mt-sm-3">Create New Post</button></a>
+<a href="./create-new-post.php"><button class="btn btn-outline-success mb-sm-3">Create New Post</button></a>
 <table class="table">
     <thead>
         <tr>
