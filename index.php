@@ -40,7 +40,7 @@ $posts = $stmt->fetchAll();
                 <tr>
                
                     <td><?=htmlentities($post['title']) ?></td>
-                    <td><?=(substr($post['content'],0,100))?><a href="single-post.php?posts=<?php echo {$_GET['incomingID']}?>">Read More</a></td>
+                    <td><?=(substr($post['content'],0,100))?><a href="/single-post.php?post=<?php echo $_GET["id"]; ?>">Read More</a></td>
                     <td><?=htmlentities($post['author']) ?></td>
                     <td><?=htmlentities($post['published_date']) ?></td>
                   

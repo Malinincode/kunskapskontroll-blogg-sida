@@ -1,11 +1,11 @@
 <?php
 require('dbconnect.php');
 
-$incomingID = $_GET["id"];
-$stmt = $pdo->query("SELECT * FROM`posts` WHERE id =  $incomingID");
+/* $incomingID = $_GET["id"]; */
+$stmt = $pdo->query("SELECT * FROM`posts` WHERE id =  $_GET["id"]"); 
 
 
-/* $stmt = $pdo->query("SELECT * FROM posts"); */
+/*  $stmt = $pdo->query("SELECT * FROM posts");  */
 $posts = $stmt->fetch();
 
 ?>
